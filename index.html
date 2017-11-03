@@ -15,23 +15,37 @@
 		//Setting Globals
 		var Speed = 0;
 		var Distance = 0;
-		var Difficulty = 5;Difficulty.toString();
-		var Set = String.fromCharCode(97+Difficulty);
+		//Whether the goal for this "Section" (As in which level they are on) has or nas not been completed. (Return to one variable per section.)
+		var Goal = 0;
+		document.write("Output from Depth Function<br /><hr>");
+		Depth();
+		function Depth() {
+		Difficulty = 5;
+		Difficulty.toString();
+		setCode = String.fromCharCode(97 + Difficulty);
+		//For Uppercase change '97' from above to 65.
 		//obstacleSet as in the sets of obstacles which vary as per difficulty (and level of the player?).
 		//Obstacle set should be an array
 		//Trying Dot Notation
-		var obstacleSet = {
-		'difficulty' : Difficulty,
-		'set' : Set,
-		'part' : [1,2,3,4,5]
+		//I kinda like it Idk why
+		obstacleSet = {
+		'difficulty': Difficulty,
+		'set': setCode
 		};
-		//document.write (obstacleSet[part]);
-		document.write ("difficulty property of obstacleSet: ",obstacleSet['difficulty'],"<br />");
-		document.write ("set property of obstacleSet: ",obstacleSet['set'],"<br />");
-		//Whether the goal for this "Section" (As in which level they are on) has or nas not been completed. (Return to one variable per section.)
-		var Goal = 0;
-		function Diff(){
-		}
+		//Seperated Objects in a Variable
+		//Like why would you even do that???
+		//Maybe to keep them seperate for some reason???
+		document.write("difficulty property of obstacleSet: ", obstacleSet['difficulty'], "<br />",
+		"set property of obstacleSet: ", obstacleSet['set'], "<br />");
+		//combined
+		temp = obstacleSet['difficulty'] + obstacleSet['set'];
+		//Or maybe || yeah this works I guess
+		obstacleSet = obstacleSet['difficulty'] + obstacleSet['set'];
+		document.write("First Combined: ", temp, "<br />",
+		"Second Combined: ", obstacleSet, "<br />");
+		//Do I even need this like haha rekt
+		return Difficulty, obstacleSet, setCode;
+		};
 		</script>
 	</body>
 </html>
